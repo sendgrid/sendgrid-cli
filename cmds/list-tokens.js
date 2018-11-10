@@ -1,7 +1,7 @@
 require('dotenv').config();
 const debug = require('debug')('sg-list-tokens'),
-  client = require('@sendgrid/client');
-  client.setApiKey(process.env.SENDGRID_API_KEY);
+  sgClient = require('../lib/sgclient'),
+  client = sgClient.clientProto.createClient();
 
 exports.command = 'list'
 exports.desc = 'List tokens'
