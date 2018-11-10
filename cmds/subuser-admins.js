@@ -25,7 +25,7 @@ const subusersProto = {
       options.url = '/v3/subusers';
       client.request(options)
       .then(([response, body]) => {
-        console.log(response.statusCode);
+        debug(response.statusCode);
         console.log(response.body);
         resolve(body)
       })
@@ -44,7 +44,7 @@ const subusersProto = {
       options.url = '/v3/teammates';
       client.request(options)
       .then(([response, body]) => {
-        console.log(response.statusCode);
+        debug(response.statusCode);
         console.log(response.body);
         resolve(body);
       });
@@ -55,8 +55,8 @@ const subusersProto = {
 function processSubusers () {
   subusersProto.getSubusers().then(function (subusers) {
     for (const key of Object.keys(subusers)) {
-      // console.log(key, subusers[key]);
-      // console.log("username", subusers[key].username);
+      debug(key, subusers[key]);
+      debug("username", subusers[key].username);
       subusersProto.getTeammatesForSubuser(subusers[key].username).then(function (result) {
 
       });
@@ -68,7 +68,7 @@ function processSubusers () {
 
 
 exports.command = 'subuser-admins'
-exports.desc = 'Get all subuser teammate admin'
+exports.desc = 'Get all subusers\' teammates'
 exports.builder = {}
 exports.handler = processSubusers
 
