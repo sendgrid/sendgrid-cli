@@ -72,6 +72,4 @@ exports.desc = 'Get all subuser teammate admin'
 exports.builder = {}
 exports.handler = processSubusers
 
-module.exports = {
-  subusersProto: subusersProto
-}
+exports.subusersProto = subusersProto
