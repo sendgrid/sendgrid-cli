@@ -10,19 +10,15 @@ let expect = chai.expect
 describe('subuser admins tests', function () {
 
   it('getSubusers ', function () {
-    subuserAdmins.subusersProto.getSubusers().then(function(data) {
-      expect(data).to.have.property('result');
-    }).catch(function (e) {
-      console.error(e);
-    })
+
+    return expect(subuserAdmins.subusersProto.getSubusers()).is.fulfilled;
+
   });
 
   it('getTeammatesForSubuser ', function () {
-    subuserAdmins.subusersProto.getTeammatesForSubuser('dummy_user1').then(function(data) {
-      expect(data).to.have.property('result');
-    }).catch(function (e) {
-      console.error(e);
-    })
+
+    return expect(subuserAdmins.subusersProto.getTeammatesForSubuser('dummy_user1')).to.eventually.have.property('result');
+    
   });
 
 });

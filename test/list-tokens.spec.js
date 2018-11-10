@@ -10,10 +10,6 @@ let expect = chai.expect
 describe('list tokens tests', function () {
 
   it('lists tokens ', function () {
-    listTokens.handler().then(function(data) {
-      expect(data).to.have.property('result');
-    }).catch(function (e) {
-      console.error(e);
-    })
+    return expect(listTokens.handler()).to.eventually.have.property('result');
   });
 });
