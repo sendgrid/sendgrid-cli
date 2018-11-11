@@ -10,6 +10,16 @@ const debug = require('debug')('sg-subuser-admins'),
 //    4. Store that info somewhere
 
 
+// Can do this for piping
+// process.stdin.resume();
+// process.stdin.setEncoding('utf8');
+// process.stdin.on('data', function(data) {
+//   process.stdout.write(data);
+// });
+// process.stdin.on('end', function(data) {
+//   console.log("Finished stdin");
+// });
+
 function processSubusers () {
   sgClient.subusersProto.getSubusers().then(function (subusers) {
     for (const key of Object.keys(subusers)) {
