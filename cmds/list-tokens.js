@@ -1,5 +1,5 @@
 require('dotenv').config();
-const debug = require('debug')('sg-list-tokens'),
+const debug = require('debug')('sg:list-tokens'),
   sgClient = require('../lib/sgclient');
 
 exports.command = 'list-tokens'

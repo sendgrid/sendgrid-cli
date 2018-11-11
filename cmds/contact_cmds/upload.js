@@ -1,5 +1,5 @@
 require('dotenv').config();
-const debug = require('debug')('contacts-upload'),
+const debug = require('debug')('sg:contacts-upload'),
   client = require('../../lib/sgclient');
 
 

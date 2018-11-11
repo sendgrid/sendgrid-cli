@@ -1,5 +1,5 @@
 require('dotenv').config()
-const debug = require('debug')('sg-subuser-admins'),
+const debug = require('debug')('sg:subuser-admins'),
   sgClient = require('../lib/sgclient');
 
 // So they'll want to:

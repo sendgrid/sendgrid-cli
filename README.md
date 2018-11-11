@@ -24,7 +24,15 @@ This command line interface implements a limited set of commands.
 
 These will output JavaScript Objects that are human readable.
 
-You can also prepend `DEBUG=*` for additional debug logging (not much yet).
+You can also prepend `DEBUG=sg:*` for additional debug logging (not much yet).
+
+Debug namespaces:
+* `sg:client`
+* `sg:utils`
+* `sg:contacts`
+* `sg:contacts-upload`
+* `sg:list-tokens`
+* `sg:subuser-admins`
 
 # Todos
 

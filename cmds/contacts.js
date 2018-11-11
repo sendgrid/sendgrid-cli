@@ -1,5 +1,5 @@
 require('dotenv').config();
-const debug = require('debug')('contacts');
+const debug = require('debug')('sg:contacts');
 
 
   exports.command = 'contacts <command>'
