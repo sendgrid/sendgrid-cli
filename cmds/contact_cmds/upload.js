@@ -4,7 +4,7 @@ const debug = require('debug')('contacts-upload'),
 
 
 exports.command = 'upload <file>'
-exports.desc = 'Upload contacts from a CSV <file> '
+exports.desc = 'Upload contacts from a CSV <file> (fields: email, first_name, last_name)'
 exports.builder = {}
 exports.handler = function (argv) {
   console.log('Uploading file %s', argv.file)
