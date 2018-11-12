@@ -1,6 +1,5 @@
 const chai = require('chai');
 const chaiAsPromised = require('chai-as-promised');
-const sinon = require('sinon');
 const client = require('../lib/sgclient');
 const utils = require('../lib/utils');
 const nock = require('nock');

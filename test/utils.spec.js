@@ -1,6 +1,5 @@
 const chai = require('chai');
 const chaiAsPromised = require('chai-as-promised');
-const sinon = require('sinon');
 const utils = require('../lib/utils');
 
 chai.use(chaiAsPromised);
