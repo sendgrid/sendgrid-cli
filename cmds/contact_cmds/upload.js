@@ -3,11 +3,11 @@ const debug = require('debug')('sg:contacts-upload'),
   client = require('../../lib/sgclient');
 
 
-exports.command = 'upload <file>'
-exports.desc = 'Upload contacts from a CSV <file> (fields: email, first_name, last_name)'
-exports.builder = {}
+exports.command = 'upload <file>';
+exports.desc = 'Upload contacts from a CSV <file> (fields: email, first_name, last_name)';
+exports.builder = {};
 exports.handler = function (argv) {
-  console.log('Uploading file %s', argv.file)
+  console.log('Uploading file %s', argv.file);
   client.contactsProto.readCsv(argv.file).then(function (jsonObj) {
     debug(jsonObj);
     client.contactsProto.uploadContacts(jsonObj).then(function (result) {
@@ -20,4 +20,4 @@ exports.handler = function (argv) {
       }
     });
   });
-}
+};

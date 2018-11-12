@@ -4,6 +4,7 @@
   "description": "Command line tools for SendGrid API",
   "main": "sg",
   "scripts": {
+    "posttest": "eslint --ignore-path .gitignore .",
     "debug": "node --inspect-brk=9229 sg list",
     "test": "nyc npm run test-unit",
     "test-unit": "NODE_ENV=test mocha './test/**/*.spec.js'"
@@ -11,6 +12,7 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
+    "eslint": "^5.9.0",
     "mocha": "^5.2.0",
     "nock": "^10.0.2",
     "nyc": "^13.0.1",

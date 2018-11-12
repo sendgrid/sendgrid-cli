@@ -1,12 +1,12 @@
 const chai = require('chai');
-const chaiAsPromised = require("chai-as-promised");
+const chaiAsPromised = require('chai-as-promised');
 const sinon = require('sinon');
 const client = require('../lib/sgclient');
 const utils = require('../lib/utils');
 const nock = require('nock');
 
-chai.use(chaiAsPromised)
-let expect = chai.expect
+chai.use(chaiAsPromised);
+let expect = chai.expect;
 
 
 describe('contacts tests', function () {

@@ -1,4 +1,4 @@
-require('dotenv').config()
+require('dotenv').config();
 const debug = require('debug')('sg:subuser-admins'),
   sgClient = require('../lib/sgclient');
 
@@ -24,7 +24,7 @@ function processSubusers () {
   sgClient.subusersProto.getSubusers().then(function (subusers) {
     for (const key of Object.keys(subusers)) {
       debug(key, subusers[key]);
-      debug("username", subusers[key].username);
+      debug('username', subusers[key].username);
       sgClient.subusersProto.getTeammatesForSubuser(subusers[key].username).then(function (result) {
         console.log(result.result);
       });
@@ -35,7 +35,7 @@ function processSubusers () {
 }
 
 
-exports.command = 'subuser-admins'
-exports.desc = 'Get all subusers\' teammates'
-exports.builder = {}
-exports.handler = processSubusers
+exports.command = 'subuser-admins';
+exports.desc = 'Get all subusers\' teammates';
+exports.builder = {};
+exports.handler = processSubusers;
