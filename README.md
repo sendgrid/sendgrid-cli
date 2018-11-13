@@ -21,6 +21,7 @@ This command line interface implements a limited set of commands.
 * `sg list-tokens`: List api keys
 * `sg subuser-admins`: Get all subuser teammate admin
 * `sg contacts upload`: Upload contacts from a CSV file (fields: email, first_name, last_name)
+* `sg webhooks`: Manage Event and Inbound Parse webhooks
 
 These will output JavaScript Objects that are human readable.
 
