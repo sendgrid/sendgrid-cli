@@ -1,7 +1,6 @@
 const chai = require('chai');
 const chaiAsPromised = require('chai-as-promised');
 const client = require('../lib/sgclient');
-const utils = require('../lib/utils');
 const nock = require('nock');
 
 chai.use(chaiAsPromised);
@@ -10,7 +9,7 @@ let expect = chai.expect;
 
 describe('webhook tests', function () {
 
-  it.only('create inbound parse webhook', function () {
+  it('create inbound parse webhook', function () {
     // Mock the API to test for error case
     const options = {allowUnmocked: true};
     let sgApi = nock('https://api.sendgrid.com', options)
@@ -34,6 +33,96 @@ describe('webhook tests', function () {
       expect(result).to.have.property('hostname');
       expect(result).to.have.property('spam_check');
       expect(result).to.have.property('send_raw');
+    });
+  });
+
+  it('creates event webhook', function () {
+    // Mock the API to test for error case
+    const options = {allowUnmocked: true};
+    let sgApi = nock('https://api.sendgrid.com', options)
+      .patch('/v3/user/webhooks/event/settings')
+      .reply(200, {
+        'enabled': true,
+        'url': 'url',
+        'group_resubscribe': true,
+        'delivered': true,
+        'group_unsubscribe': true,
+        'spam_report': true,
+        'bounce': true,
+        'deferred': true,
+        'unsubscribe': true,
+        'processed': true,
+        'open': true,
+        'click': true,
+        'dropped': true
+      });
+
+    const webhookOpts = {
+      'enabled': true,
+      'url': 'url',
+      'group_resubscribe': true,
+      'delivered': true,
+      'group_unsubscribe': true,
+      'spam_report': true,
+      'bounce': true,
+      'deferred': true,
+      'unsubscribe': true,
+      'processed': true,
+      'open': true,
+      'click': true,
+      'dropped': true
+    };
+
+    return client.webhooksProto.enableEventWebhook(webhookOpts).then(function (result) {
+      expect(result).to.have.property('enabled');
+      expect(result).to.have.property('url');
+      expect(result).to.have.property('group_resubscribe');
+      expect(result).to.have.property('spam_report');
+    });
+  });
+
+  it('disables event webhook', function () {
+    // Mock the API to test for error case
+    const options = {allowUnmocked: true};
+    let sgApi = nock('https://api.sendgrid.com', options)
+      .patch('/v3/user/webhooks/event/settings')
+      .reply(200, {
+        'enabled': true,
+        'url': 'url',
+        'group_resubscribe': true,
+        'delivered': true,
+        'group_unsubscribe': true,
+        'spam_report': true,
+        'bounce': true,
+        'deferred': true,
+        'unsubscribe': true,
+        'processed': true,
+        'open': true,
+        'click': true,
+        'dropped': true
+      });
+
+    const webhookOpts = {
+      'enabled': true,
+      'url': 'url',
+      'group_resubscribe': true,
+      'delivered': true,
+      'group_unsubscribe': true,
+      'spam_report': true,
+      'bounce': true,
+      'deferred': true,
+      'unsubscribe': true,
+      'processed': true,
+      'open': true,
+      'click': true,
+      'dropped': true
+    };
+
+    return client.webhooksProto.disableEventWebhook(webhookOpts).then(function (result) {
+      expect(result).to.have.property('enabled');
+      expect(result).to.have.property('url');
+      expect(result).to.have.property('group_resubscribe');
+      expect(result).to.have.property('spam_report');
     });
   });
 });
