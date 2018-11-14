@@ -1,11 +1,11 @@
 require('dotenv').config();
-const debug = require('debug')('sg:webhooks-add-parse'),
+const debug = require('debug')('sg:webhooks-disable-event'),
   client = require('../../lib/sgclient');
 
 exports.command = 'disable-events';
 exports.desc = 'Disable an event webhook';
 exports.builder = {};
-exports.handler = function (argv) {
+exports.handler = function () {
   const webhookOpts = {};
   webhookOpts.enabled = false;
 

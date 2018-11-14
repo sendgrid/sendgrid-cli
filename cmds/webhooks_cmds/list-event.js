@@ -1,17 +1,12 @@
 require('dotenv').config();
-const debug = require('debug')('sg:webhooks-add-parse'),
-  client = require('../../lib/sgclient');
+const client = require('../../lib/sgclient');
 
 exports.command = 'list-events';
 exports.desc = 'Show event webhook settings';
 exports.builder = {};
-exports.handler = function (argv) {
-  const webhookOpts = {};
-  webhookOpts.enabled = false;
+exports.handler = function () {
 
-  debug('Event webhook options', webhookOpts);
-
-  client.webhooksProto.listEventWebhook(webhookOpts).then(function (result) {
+  client.webhooksProto.listEventWebhook().then(function (result) {
     console.log(result);
   }).catch(function (e) {
     console.log(e.response.body);
