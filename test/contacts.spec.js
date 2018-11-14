@@ -18,7 +18,7 @@ describe('contacts tests', function () {
   it('throws an error when a non 2xx/3xx', function () {
     // Mock the API to test for error case
     const options = {allowUnmocked: true};
-    let sgApi = nock('https://api.sendgrid.com', options)
+    nock('https://api.sendgrid.com', options)
       .post('/v3/contactdb/recipients')
       .reply(400, 'error');
 

@@ -12,7 +12,7 @@ describe('webhook tests', function () {
   it('create inbound parse webhook', function () {
     // Mock the API to test for error case
     const options = {allowUnmocked: true};
-    let sgApi = nock('https://api.sendgrid.com', options)
+    nock('https://api.sendgrid.com', options)
       .post('/v3/user/webhooks/parse/settings')
       .reply(201, {
         'url': 'http://email.myhostname.com',
@@ -39,7 +39,7 @@ describe('webhook tests', function () {
   it('creates event webhook', function () {
     // Mock the API to test for error case
     const options = {allowUnmocked: true};
-    let sgApi = nock('https://api.sendgrid.com', options)
+    nock('https://api.sendgrid.com', options)
       .patch('/v3/user/webhooks/event/settings')
       .reply(200, {
         'enabled': true,
@@ -84,7 +84,7 @@ describe('webhook tests', function () {
   it('disables event webhook', function () {
     // Mock the API to test for error case
     const options = {allowUnmocked: true};
-    let sgApi = nock('https://api.sendgrid.com', options)
+    nock('https://api.sendgrid.com', options)
       .patch('/v3/user/webhooks/event/settings')
       .reply(200, {
         'enabled': true,
@@ -129,7 +129,7 @@ describe('webhook tests', function () {
   it('displays the event webhook', function () {
     // Mock the API to test for error case
     const options = {allowUnmocked: true};
-    let sgApi = nock('https://api.sendgrid.com', options)
+    nock('https://api.sendgrid.com', options)
       .get('/v3/user/webhooks/event/settings')
       .reply(200, {
         'enabled': true,
