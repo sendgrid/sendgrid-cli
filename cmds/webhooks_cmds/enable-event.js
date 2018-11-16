@@ -1,5 +1,5 @@
 require('dotenv').config();
-const debug = require('debug')('sg:webhooks-add-parse'),
+const debug = require('debug')('sg:webhooks-enable-event'),
   client = require('../../lib/sgclient');
 
 exports.command = 'add-all-events <url>';
