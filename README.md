@@ -18,10 +18,10 @@ The SendGrid CLI (Command Line Interface) is a tool that helps you to interact w
 
 This command line interface implements a limited set of commands.
 
-* `sg list-apikeys`: List API keys
-* `sg subuser-admins`: Iterate over all subusers and list all teammates (including role) for each subuser
-* `sg contacts upload`: Upload contacts from a CSV file (fields: email, first_name, last_name)
-* `sg webhooks`: Manage Event and Inbound Parse webhooks
+* `./sg list-apikeys`: List API keys
+* `./sg subuser-admins`: Iterate over all subusers and list all teammates (including role) for each subuser
+* `./sg contacts upload`: Upload contacts from a CSV file (fields: email, first_name, last_name)
+* `./sg webhooks`: Manage Event and Inbound Parse webhooks
 
 These will output JavaScript Objects that are human readable.
 
