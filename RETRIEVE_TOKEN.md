@@ -2,7 +2,7 @@
 
 Certain API calls require you to set the `SENDGRID_TOKEN` environment variable.  These will be noted in the command help itself.
 
-*** This token is only valid for the browser session.  You will need to update the token when 
+*** This token is only valid for the browser session.  You will need to update the token when your browser session times out, you close the browser, or logout manually!!! ***
 
 To do this:
 
