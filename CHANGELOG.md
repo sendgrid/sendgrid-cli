@@ -12,3 +12,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Ability to use API token
 - Update docs for command line clarity
+
+[Unreleased]: https://github.com/sendgrid/sendgrid-cli/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/sendgrid/sendgrid-cli/compare/compare/v1.1.0...v1.1.0
