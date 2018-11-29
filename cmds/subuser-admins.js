@@ -21,6 +21,7 @@ const debug = require('debug')('sg:subuser-admins'),
 // });
 
 function processSubusers () {
+  if (!process.env.SENDGRID_TOKEN) { throw new Error('SENDGRID_TOKEN not set!'); }
   sgClient.subusersProto.getSubusers().then(function (subusers) {
     for (const key of Object.keys(subusers)) {
       debug(key, subusers[key]);
@@ -36,6 +37,6 @@ function processSubusers () {
 
 
 exports.command = 'subuser-admins';
-exports.desc = 'Get all subusers\' teammates';
+exports.desc = 'Get all subusers\' teammates (requires SENDGRID_TOKEN)';
 exports.builder = {};
 exports.handler = processSubusers;

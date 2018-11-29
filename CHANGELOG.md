@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - None
 
+## [1.2.0] - 29-Nov-2018
+### Removed
+- Ability to use basic auth
+
 ## [1.1.0] - 28-Nov-2018
 ### Added
 - Ability to use API token
