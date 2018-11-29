@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - None
 
+## [1.2.1] - 29-Nov-2018
+### Fixed
+- Documentation of token
+
 ## [1.2.0] - 29-Nov-2018
 ### Removed
 - Ability to use basic auth
@@ -18,4 +22,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Update docs for command line clarity
 
 [Unreleased]: https://github.com/sendgrid/sendgrid-cli/compare/v1.1.0...HEAD
+[1.2.1]: https://github.com/sendgrid/sendgrid-cli/compare/compare/v1.1.0...v1.2.1
+[1.2.0]: https://github.com/sendgrid/sendgrid-cli/compare/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/sendgrid/sendgrid-cli/compare/compare/v1.1.0...v1.1.0
