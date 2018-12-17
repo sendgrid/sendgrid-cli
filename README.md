@@ -2,6 +2,8 @@
 
 The SendGrid CLI (Command Line Interface) is a tool that helps you to interact with SendGrid services from the command line.  It is helpful for automating routine tasks.  The SendGrid CLI removes the need to write code to perform common management activites of the SendGrid platform like uploading a CSV file and enabling/disabling webhooks.
 
+![animated example](sendgrid-cli.gif)
+
 # Prerequisites
 
 * SendGrid Account
